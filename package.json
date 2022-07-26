@@ -1,0 +1,47 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "env-cmd ./config/dev.env nodemon src/index.js",
+    "test": "env-cmd ./config/test.env jest --watch --runInBand"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@heroku/buildpack-registry": "^1.0.1",
+    "@sendgrid/mail": "^6.3.1",
+    "async-file": "^2.0.2",
+    "axios": "^0.27.2",
+    "bcryptjs": "^2.4.3",
+    "cheerio": "^1.0.0-rc.12",
+    "cli-ux": "^6.0.9",
+    "cors": "^2.8.5",
+    "docker": "^1.0.0",
+    "express": "^4.16.4",
+    "git-user-name": "^2.0.0",
+    "got": "^12.1.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongodb": "^3.6.3",
+    "mongoose": "^6.4.6",
+    "multer": "^1.4.1",
+    "phoenix": "^1.6.11",
+    "puppeteer": "^15.4.0",
+    "selenium-webdriver": "^4.3.1",
+    "sharp": "^0.30.7",
+    "validator": "^10.9.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^8.0.2",
+    "install": "^0.13.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.9",
+    "supertest": "^3.4.1"
+  }
+}
