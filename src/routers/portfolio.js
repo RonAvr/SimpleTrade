@@ -84,9 +84,10 @@ router.patch('/portfolio/sell', auth, async (req, res) => {
         portfolio.orderbook = portfolio.orderbook.concat({symbol, price, quantity, orderType})
 
         // adding the order value to avaliable cash, taking it from the porfolio value, and updating the portfolio interest
+        totalMoney = user.available_cash + portfolio.portfolioValue + (price - stockToSell.price) * quantity
         user.available_cash += price * quantity
         portfolio.portfolioValue -= stockToSell.price * quantity
-        portfolio.interest = portfolio.interest * ( portfolio.portfolioValue + user.available_cash ) / process.env.START_CASH 
+        portfolio.interest = ( totalMoney ) / process.env.START_CASH 
 
         // if the user sells all the shares he has
         if (stockToSell.quantity === quantity){
